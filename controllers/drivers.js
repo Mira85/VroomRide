@@ -38,10 +38,16 @@ driversRouter.get('/seed', async (req, res) => {
     res.redirect('/drivers');
 });
 
-//Homepage route
+//Homepage Route
 driversRouter.get('/', (req, res) => {
-    res.render('drivers_home.ejs')
+    res.render('drivers_home.ejs');
 });
+
+//New Route
+driversRouter.get('/new', (req, res) => {
+    res.render('newdriver.ejs');
+});
+
 
 //export route object
 module.exports = driversRouter;
