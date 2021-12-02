@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
-const { application } = require('express');
+const driversController = require('./controllers/drivers');
 
 
 //Initialize app
@@ -34,6 +34,7 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
 //Route
+app.use('/drivers/', driversController);
 app.get('/', (req, res) => {
     res.render('home.ejs')
 });
