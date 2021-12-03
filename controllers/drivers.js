@@ -48,6 +48,25 @@ driversRouter.get('/new', (req, res) => {
     res.render('newdriver.ejs');
 });
 
+//Delete Route
+
+//Update Route
+driversRouter.get('/edit', (req, res) => {
+    Driver.findById(req.params.id, (error, driver) => {
+        res.render('editdriver.ejs', {driver});
+    });
+});
+
+
+//Create Route
+driversRouter.post('/', (req, res) => {
+    const split_days = req.body.days_available.split(',');
+       req.body.days_available = split_days;
+    Driver.create(req.body, (err, driver) => {
+        res.redirect('/drivers');
+    });
+});
+
 
 //export route object
 module.exports = driversRouter;
