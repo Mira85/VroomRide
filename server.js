@@ -4,7 +4,7 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session')
 const driversController = require('./controllers/drivers');
-
+const usersController = require('./controllers/users');
 
 //Initialize app
 const app =express();
@@ -43,9 +43,10 @@ app.use(morgan('dev'));
 
 //Route
 app.use('/drivers/', driversController);
-/*app.get('/', (req, res) => {
+app.use('/user/', usersController);
+app.get('/', (req, res) => {
     res.render('home.ejs')
-});*/
+});
 
 //Listener
 app.listen(PORT, () => {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+</head>
+
+<body>
+    <h1>Signup</h1>
+    <form action="/user/signup" method="POST">
+        <label>Choose option</label>
+        <select data-style="btn-info" name="selection">
+            <option value="driver">Driver</option>
+            <option value="parent">Parent</option>
+        </select>
+        <label>
+            Email:
+            <input type="email" name="email">
+        </label>
+        <label>
+            Password:
+            <input type="password" name="password">
+        </label>
+        <input type="submit" value="Signup">
+    </form>
+</body>
+
+</html>

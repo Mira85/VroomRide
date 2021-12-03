@@ -9,8 +9,30 @@ const SALT_ROUNDS = 10;
 const usersRouter = express.Router();
 
 //Routes
-usersRouter.get('/login', (req, res) => {
-    res.render('login.ejs', {err:''});
+usersRouter.get('/signup', (req, res) => {
+    res.render('signup.ejs', {
+        err: ''
+    });
 });
 
+usersRouter.post('/signup', (req, res) => {
+    const hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(SALT_ROUNDS));
+    const driver = {
+        email: req.body.email,
+        password: hash
+    }
+    req.body.password = hash;
+    if (req.body.selection === 'driver') {
+        console.log(req.body.selection)
+        Driver.create(driver, (error, driver) => {
+            console.log(error)
+            req.session.user = driver._id;
+            res.redirect('/drivers')
+        })
+    } else {
+        res.redirect('/')
+    }
 
+})
+
+module.exports = usersRouter;
