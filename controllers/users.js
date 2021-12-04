@@ -1,6 +1,7 @@
 //Dependencies
 const express = require('express');
 const Driver = require('../models/driver');
+const Parent = require('../models/parent');
 
 const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 10;
@@ -16,23 +17,24 @@ usersRouter.get('/signup', (req, res) => {
 });
 
 usersRouter.post('/signup', (req, res) => {
-    const hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(SALT_ROUNDS));
-    const driver = {
-        email: req.body.email,
-        password: hash
-    }
-    req.body.password = hash;
-    if (req.body.selection === 'driver') {
-        console.log(req.body.selection)
-        Driver.create(driver, (error, driver) => {
-            console.log(error)
-            req.session.user = driver._id;
-            res.redirect('/drivers')
-        })
-    } else {
-        res.redirect('/')
-    }
+            const hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(SALT_ROUNDS));
+            const user = {
+                email: req.body.email,
+                password: hash
+            }
+            if (req.body.selection === 'driver') {
+                Driver.create(user, (error, driver) => {
+                    req.session.user = driver._id;
+                    res.redirect('/')
+                })
+            } else {
+                Parent.create(user, (error, parent) => {
+                        req.session.user = parent._id;
+                        res.redirect('/')
 
-})
+                })
 
-module.exports = usersRouter;
+                };
+            });
+
+            module.exports = usersRouter;
