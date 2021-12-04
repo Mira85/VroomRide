@@ -11,7 +11,7 @@
     <% if (err) { %>
         <p style="color: red; text-transform: capitalize;"><%=err%></p>
         <% } %>
-        <form>
+        <form action="/user/login" method="POST">
             <label>
                 Email:
                 <input type="email" name="email">
