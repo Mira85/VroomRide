@@ -38,34 +38,44 @@ driversRouter.get('/seed', async (req, res) => {
     res.redirect('/drivers');
 });
 
-//Homepage Route
-driversRouter.get('/', (req, res) => {
-    res.render('drivers_home.ejs');
-});
 
-//New Route
-driversRouter.get('/new', (req, res) => {
-    res.render('newdriver.ejs');
-});
+
+
+//Index Route
+driversRouter.get('/', (req, res) => {
+    Driver.find({}, (err, drivers) => {
+        res.render('driversindex.ejs', {drivers})
+    })
+})
 
 //Delete Route
 
 //Update Route
-driversRouter.get('/edit', (req, res) => {
-    Driver.findById(req.params.id, (error, driver) => {
-        res.render('editdriver.ejs', {driver});
-    });
-});
-
-
-//Create Route
-driversRouter.post('/', (req, res) => {
+driversRouter.put('/driversDashboard', (req, res) => {
     const split_days = req.body.days_available.split(',');
-       req.body.days_available = split_days;
-    Driver.create(req.body, (err, driver) => {
-        res.redirect('/drivers');
+        req.body.days_available = split_days;
+    Driver.findByIdAndUpdate(req.session.user, req.body, {new:true}, (error, driver) => {
+        res.redirect('/drivers/');
     });
 });
+
+
+//Edit Route
+driversRouter.get('/edit', (req, res) => {
+    console.log('edit route triggered')
+    Driver.findById(req.session.user, (err, driver) => {
+        console.log(driver)
+        res.render('editdriver.ejs', {driver})
+    })
+})
+
+//Show Route
+driversRouter.get('/:id/', (req, res) => {
+    console.log('show route triggered')
+    Driver.findById(req.params.id, (err, driver) => {
+        res.render('showdriver.ejs', {driver})
+    })
+})
 
 
 //export route object

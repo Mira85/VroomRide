@@ -1,7 +1,7 @@
 <div class="mainHeader">
     <h1>Add a Driver</h1>
 </div>
-<form class="editForm" action="/drivers<%=driver.id%>?_method=PUT%>" method="POST">
+<form class="editForm" action="/drivers/driversDashboard?_method=PUT%>" method="POST">
     <div class="eachentry">
         <label class="newItems">Name</label>
         <input class="input" type="text" name="name" value=<%=driver.name%>>
@@ -9,6 +9,10 @@
     <div class="eachentry">
         <label class="newItems">Img Link</label>
         <input class="input" type="text" name="img"  value=<%=driver.img%>>
+    </div>
+    <div class="eachentry">
+        <label class="newItems">Email</label>
+        <input class="input" type="text" name="email"  value=<%=driver.email%>>
     </div>
     <div class="eachentry">
         <label class="newItems">Age</label>

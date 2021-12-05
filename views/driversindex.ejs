@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers index page</title>
+</head>
+<body>
+    <table>
+        <% for (let i = 0; i < drivers.length; i++) { %>
+        <tr>
+            <td><a href="/drivers/<%=drivers[i]._id%>"><%=drivers[i].name%></td>
+        </tr>
+
+        <% } %>
+    </table>
+    <a href="/drivers/edit">
+        <button class="editBtn" type="button">Edit</button>
+    </a>
+</body>
+</html>

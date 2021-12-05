@@ -15,7 +15,7 @@ usersRouter.get('/signup', (req, res) => {
         err: ''
     });
 });
-
+//Create
 usersRouter.post('/signup', (req, res) => {
     const hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(SALT_ROUNDS));
     const user = {
@@ -36,6 +36,8 @@ usersRouter.post('/signup', (req, res) => {
 
     };
 });
+
+
 usersRouter.get('/login', (req, res) => {
     res.render('login.ejs', {
         err: ''
@@ -52,7 +54,7 @@ usersRouter.post('/login', (req, res) => {
         if (driver) {
             if (bcrypt.compareSync(req.body.password, driver.password)) {
                 req.session.user = driver._id;
-                res.redirect('/user/driversDashboard')
+                res.redirect('/user/driversDashboard');
             } else {
                 return res.render('login.ejs', {
                     err: 'invalid creds'
@@ -78,44 +80,20 @@ usersRouter.post('/login', (req, res) => {
                         err: 'invalid creds'
                     });
                 }
-
-
             })
         }
-
-
-
-
-
-        //  find parent in database
-        /*Parent.findOne({
-            email: req.body.email
-        }, (error, parent) => {
-            console.log('err:', error)
-            console.log('parent:', parent)
-            if (!parent) return res.render('login.ejs', {
-                err: 'invalid creds'
-            });
-            if (!bcrypt.compareSync(req.body.password, parent.password)) {
-                return res.render('login.ejs', {
-                    err: 'invalid creds'
-                });
-            }
-            req.session.user = parent._id
-            res.redirect('/user/parentsDashboard')
-        })*/
-
     });
 });
 
 
 usersRouter.get('/driversDashboard', (req, res) => {
     if (!req.session.user) return res.redirect('/user/login');
-    Driver.findById(req.session.user, (err, driver) => {
-        res.render('driversprofile.ejs', {
+   Driver.findById(req.session.user, (err, driver) => {
+        res.render('editdriver.ejs', {
             driver
         });
     });
+   
 });
 
 usersRouter.get('/parentsDashboard', (req, res) => {
