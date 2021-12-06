@@ -54,7 +54,7 @@ usersRouter.post('/login', (req, res) => {
         if (driver) {
             if (bcrypt.compareSync(req.body.password, driver.password)) {
                 req.session.user = driver._id;
-                res.redirect('/drivers/');
+                res.redirect('/drivers/edit');
             } else {
                 return res.render('login.ejs', {
                     err: 'invalid creds'
@@ -85,6 +85,11 @@ usersRouter.post('/login', (req, res) => {
     });
 });
 
+usersRouter.get('/logout', (req, res) => {
+    req.session.destroy(() => {
+        res.redirect('/');
+    });
+});
 
 /*usersRouter.get('/driversDashboard', (req, res) => {
     if (!req.session.user) return res.redirect('/user/login');
