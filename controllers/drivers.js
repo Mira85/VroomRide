@@ -1,5 +1,6 @@
 // Dependencies
 const express = require('express');
+const driver = require('../models/driver');
 const Driver = require('../models/driver');
 //Route object
 const driversRouter = express.Router();
@@ -49,6 +50,12 @@ driversRouter.get('/', (req, res) => {
 })
 
 //Delete Route
+driversRouter.delete('/:id', (req, res) => {
+    Driver.findByIdAndRemove(req.session.user, (error, driver)=> {
+        res.redirect('/drivers/');
+    }
+    )
+})
 
 //Update Route
 driversRouter.put('/driversDashboard', (req, res) => {
@@ -62,16 +69,13 @@ driversRouter.put('/driversDashboard', (req, res) => {
 
 //Edit Route
 driversRouter.get('/edit', (req, res) => {
-    console.log('edit route triggered')
     Driver.findById(req.session.user, (err, driver) => {
-        console.log(driver)
         res.render('editdriver.ejs', {driver})
     })
 })
 
 //Show Route
 driversRouter.get('/:id/', (req, res) => {
-    console.log('show route triggered')
     Driver.findById(req.params.id, (err, driver) => {
         res.render('showdriver.ejs', {driver})
     })

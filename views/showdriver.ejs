@@ -9,34 +9,37 @@
 <body>
         <div class="eachentry">
             <label class="newItems">Name</label>
-            <input class="input" type="text" name="name" value=<%=driver.name%>>
+            <input class="input" type="text" name="name" value="<%=driver.name%>">
         </div>
         <div class="eachentry">
             <label class="newItems">Img Link</label>
-            <input class="input" type="text" name="img"  value=<%=driver.img%>>
+            <input class="input" type="text" name="img"  value="<%=driver.img%>">
         </div>
         <div class="eachentry">
             <label class="newItems">Email</label>
-            <input class="input" type="text" name="email"  value=<%=driver.email%>>
+            <input class="input" type="text" name="email"  value="<%=driver.email%>">
         </div>
         <div class="eachentry">
             <label class="newItems">Age</label>
-            <input class="input" type="number" name="age"  value=<%=driver.age%>>
+            <input class="input" type="number" name="age"  value="<%=driver.age%>">
         </div>
         <div class="eachentry">
             <label class="newItems">Years of Experience</label>
-            <input class="input" type="number" name="years_experience"  value=<%=driver.years_experience%>>
+            <input class="input" type="number" name="years_experience"  value="<%=driver.years_experience%>">
         </div>
         <div class="eachentry">
             <label class="newItems">Certified</label>
-            <input data-style="btn-info" name="certified"  value=<%=driver.certified%>>
+            <input data-style="btn-info" name="certified"  value="<%=driver.certified%>">
       
         </select> 
         </div>
         <div class="eachentry">
             <label class="newItems">Availability(Days)</label>
-            <input class="input" type="text" name="days_available"  value=<%=driver.days_available%>>
+            <input class="input" type="text" name="days_available"  value="<%=driver.days_available%>">
         </div>
+        <form action="/drivers/<%=driver._id%>?_method=DELETE" method="POST">
+            <input class="delBtn" type="submit" value="Delete Your Profile" />
+        </form>
         
 </body>
 </html>
