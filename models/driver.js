@@ -11,7 +11,7 @@ const driverSchema = new Schema ({
     age: Number,
     years_experience: Number,
     certified: Boolean,
-    days_available: [String],
+    days_available: {type:[String], required: true, lowercase:true},
 
 }, {timestamps: true});
 
