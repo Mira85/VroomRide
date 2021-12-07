@@ -104,19 +104,18 @@ usersRouter.get('/logout', (req, res) => {
 usersRouter.get('/parentsDashboard', (req, res) => {
     if (!req.session.user) return res.redirect('/user/login');
     Parent.findById(req.session.user, async(err, parent) => {
-        res.render('searchdriver.ejs', {
-            parent
-        });
         const term = req.query.term;
         if (term) {
+            console.log(term)
             const results = await Driver.find({days_available: {$regex: term}});
             res.json({ results });
         } else {
-            res.render('searchdriver.ejs');
+            res.render('searchdriver.ejs', {
+                parent
         }
-        });
-   
-})
+    )}
+});
+});
 
 /*driversRouter.get('/search', async (req, res) => {
     const term = req.query.term;

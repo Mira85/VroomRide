@@ -8,36 +8,27 @@
 </head>
 <body>
     <%- include('./partials/nav') %>
-        <div class="eachentry">
-            <label class="newItems">Name</label>
-            <input class="input" type="text" name="name" value="<%=driver.name%>">
+        <div class="showname">
+            <h2 style="text-transform: capitalize;"><%=driver.name%></h2>
         </div>
-        <div class="eachentry">
-            <label class="newItems">Img Link</label>
-            <input class="input" type="text" name="img"  value="<%=driver.img%>">
             <div id="showImg"><img src="/images/<%=driver.img%>" alt="driver image" width="300" height="300"> </div>
         </div>
         <div class="eachentry">
-            <label class="newItems">Email</label>
-            <input class="input" type="text" name="email"  value="<%=driver.email%>">
+             Email: <%=driver.email%>
         </div>
         <div class="eachentry">
-            <label class="newItems">Age</label>
-            <input class="input" type="number" name="age"  value="<%=driver.age%>">
+            Age: <%=driver.age%>
         </div>
         <div class="eachentry">
-            <label class="newItems">Years of Experience</label>
-            <input class="input" type="number" name="years_experience"  value="<%=driver.years_experience%>">
+            Years of Experience: <%=driver.years_experience%>
         </div>
         <div class="eachentry">
-            <label class="newItems">Certified</label>
-            <input data-style="btn-info" name="certified"  value="<%=driver.certified%>">
+            Certified: <%=driver.certified%>
       
         </select> 
         </div>
         <div class="eachentry">
-            <label class="newItems">Availability(Days)</label>
-            <input class="input" type="text" name="days_available"  value="<%=driver.days_available%>">
+            Availability(Days): <%=driver.days_available%>
         </div>
         <form action="/drivers/<%=driver._id%>?_method=DELETE" method="POST">
             <input class="delBtn" type="submit" value="Delete Your Profile" />

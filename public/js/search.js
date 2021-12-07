@@ -8,7 +8,8 @@ inputElement.addEventListener('focus', handleReset);
 async function handleClick() {
     const searchTerm = inputElement.value;
     if (!searchTerm) return alert('Sorry No Search Term Was Provided');
-    const response = await fetch('/drivers/search?term=' + searchTerm);
+    const response = await fetch('/user/parentsDashboard?term=' + searchTerm);
+    console.log(response)
     const data = await response.json();
     render();
 

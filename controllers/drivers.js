@@ -6,16 +6,17 @@ const Driver = require('../models/driver');
 //Route object
 const driversRouter = express.Router();
 
-/*driversRouter.get('/search', async (req, res) => {
+driversRouter.get('/search', async (req, res) => {
     const term = req.query.term;
     if (term) {
+        console.log(term)
         const results = await Driver.find({days_available: {$regex: term}});
         res.json({ results });
     } else {
         res.render('searchdriver.ejs');
     }
     
-});*/
+});
 
 //Router actions
 // seed route
