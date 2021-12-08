@@ -103,18 +103,38 @@ usersRouter.get('/logout', (req, res) => {
 //search
 usersRouter.get('/search', (req, res) => {
     if (!req.session.user) return res.redirect('/user/login');
-    Parent.findById(req.session.user, async(err, parent) => {
+    Parent.findById(req.session.user, async (err, parent) => {
         const term = req.query.term;
         if (term) {
-            const results = await Driver.find({days_available: {$regex: term}});
-            res.json({ results });
+            const results = await Driver.find({
+                days_available: {
+                    $regex: term
+                }
+            });
+            res.json({
+                results
+            });
         } else {
             res.render('searchdriver.ejs', {
                 parent
+            })
         }
-    )}
+    });
 });
+
+//Select Route
+
+usersRouter.post('/:id/select', async (req, res) => {
+    const parent = await Parent.findById(req.session.user);
+    console.log(req.body)
+    parent.selected_drivers.push({
+        id: req.params.id,
+        day: req.body.days_available
+    });
+    await parent.save();
+    res.redirect('/drivers/');
 });
+
 
 /*driversRouter.get('/search', async (req, res) => {
     const term = req.query.term;

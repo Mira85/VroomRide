@@ -1,15 +1,20 @@
 //Dependencies
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+//Selected drivers schema
+const selectedDriversSchema = new Schema({
+    id: String,
+    day:String,
+}, {timestamps: true});
 
 //Mongoose Schema
-const Schema = mongoose.Schema;
+
 const parentSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    selected_drivers: [{
-        driver: String
-    }],
+    selected_drivers: [selectedDriversSchema],
 }, {
     timestamps: true
 });
