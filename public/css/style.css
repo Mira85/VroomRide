@@ -2,26 +2,21 @@
     box-sizing: border-box;
     margin: 0;
 }
+
 .navBar {
-    background-color: white;
-    color: #49205E;
-}
-
-body{
-    background-color:#d384bd;
+    background-color: #412b76;
     color: white;
-    
-
 }
+
+
 
 h1 {
-    color: red;
-    border: solid red;
+    color:white;
     font-family: 'MonteCarlo', cursive;
+    background-color:  #412b76;
 }
 
 nav {
-    border:solid black;
     display:flex;
     
   
@@ -37,19 +32,23 @@ nav {
     border: solid purple;
 }
 .box {
-    border: solid brown;
     height: 40rem;
+    background-color: white;
 }
 
 .homepageDiv1{
-    border:solid yellow;
     margin-top: 3rem;
     margin-bottom: 5rem;
+    font-weight: bold;
 }
 .homepageDiv2 {
     display: flex;
-    border: solid red;
     flex-direction: row;
     justify-content: center;
     gap: 50px;
 }
+.button {
+    background-color: #2ee8b6;
+    color: white;
+}
+ 
