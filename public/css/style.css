@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+.navBar {
+    background-color: white;
+    color: #49205E;
+}
+
+body{
+    background-color:#d384bd;
+    color: white;
+    
+
+}
+
+h1 {
+    color: red;
+    border: solid red;
+    font-family: 'MonteCarlo', cursive;
+}
+
+nav {
+    border:solid black;
+    display:flex;
+    
+  
+}
+
+.container{
+    border: solid green;
+    width: 31rem;
+  
+}
+
+.section{
+    border: solid purple;
+}
+.box {
+    border: solid brown;
+    height: 40rem;
+}
+
+.homepageDiv1{
+    border:solid yellow;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+.homepageDiv2 {
+    display: flex;
+    border: solid red;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}

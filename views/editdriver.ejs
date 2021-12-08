@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head')%>
+<%- include('./partials/head')%>
+
 <body>
     <%- include('./partials/nav') %>
 
     <div class="mainHeader">
         <h1>Edit Profile</h1>
     </div>
-    <form class="editForm" action="/drivers/driversDashboard?_method=PUT%>" method="POST">
-        <div class="eachentry">
-            <label class="newItems">Name</label>
-            <input class="input" type="text" name="name" value="<%=driver.name%>">
+    <section class="section">
+        <div class="container">
+            <div class="field">
+
+                <form class="editForm" action="/drivers/driversDashboard?_method=PUT%>" method="POST">
+                    <label class="label">Name</label>
+                    <input class="input" type="text" name="name" value="<%=driver.name%>">
+            </div>
+
+            <div class="field">
+                <label class="label">Img Link</label>
+                <div class="control">
+                    <input class="input" type="text" name="img" value="<%=driver.img%>">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <input class="input" type="text" name="email" value="<%=driver.email%>">
+            </div>
+            <div class="field">
+                <label class="label">Age</label>
+                <input class="input" type="number" name="age" value="<%=driver.age%>">
+            </div>
+            <div class="field">
+                <label class="label">Years of Experience</label>
+                <input class="input" type="number" name="years_experience" value="<%=driver.years_experience%>">
+            </div>
+            <div class="field">
+                <label class="label">Certified</label>
+                <select data-style="btn-info" name="certified" value="<%=driver.certified%>">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            </div>
+            <div class="field">
+                <label class="label">Availability(Days)</label>
+                <input class="input" type="text" name="days_available" value="<%=driver.days_available%>">
+            </div>
+            <input class="button" type="submit" value="Update Driver">
+            </form>
         </div>
-        <div class="eachentry">
-            <label class="newItems">Img Link</label>
-            <input class="input" type="text" name="img" value="<%=driver.img%>">
-        </div>
-        <div class="eachentry">
-            <label class="newItems">Email</label>
-            <input class="input" type="text" name="email" value="<%=driver.email%>">
-        </div>
-        <div class="eachentry">
-            <label class="newItems">Age</label>
-            <input class="input" type="number" name="age" value="<%=driver.age%>">
-        </div>
-        <div class="eachentry">
-            <label class="newItems">Years of Experience</label>
-            <input class="input" type="number" name="years_experience" value="<%=driver.years_experience%>">
-        </div>
-        <div class="eachentry">
-            <label class="newItems">Certified</label>
-            <select data-style="btn-info" name="certified" value="<%=driver.certified%>">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
-        </div>
-        <div class="eachentry">
-            <label class="newItems">Availability(Days)</label>
-            <input class="input" type="text" name="days_available" value="<%=driver.days_available%>">
-        </div>
-        <input class="editDriver" type="submit" value="Update Driver">
-    </form>
+    </section>
     <%- include('./partials/footer.ejs')%>
 </body>
+
 </html>
