@@ -69,7 +69,7 @@ usersRouter.post('/login', (req, res) => {
                 if (parent) {
                     if (bcrypt.compareSync(req.body.password, parent.password)) {
                         req.session.user = parent._id;
-                        res.redirect('/user/parentsDashboard')
+                        res.redirect('/user/search')
                     } else {
                         return res.render('login.ejs', {
                             err: 'invalid creds'
@@ -100,13 +100,12 @@ usersRouter.get('/logout', (req, res) => {
     });
    
 });*/
-
-usersRouter.get('/parentsDashboard', (req, res) => {
+//search
+usersRouter.get('/search', (req, res) => {
     if (!req.session.user) return res.redirect('/user/login');
     Parent.findById(req.session.user, async(err, parent) => {
         const term = req.query.term;
         if (term) {
-            console.log(term)
             const results = await Driver.find({days_available: {$regex: term}});
             res.json({ results });
         } else {

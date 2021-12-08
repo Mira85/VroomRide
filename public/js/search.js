@@ -1,6 +1,6 @@
 const buttonElement = document.querySelector('button');
 const inputElement = document.querySelector('input');
-const ulElement = document.querySelector('ul');
+const sectionElement = document.querySelector('section');
 
 buttonElement.addEventListener('click', handleClick);
 inputElement.addEventListener('focus', handleReset);
@@ -8,23 +8,26 @@ inputElement.addEventListener('focus', handleReset);
 async function handleClick() {
     const searchTerm = inputElement.value;
     if (!searchTerm) return alert('Sorry No Search Term Was Provided');
-    const response = await fetch('/user/parentsDashboard?term=' + searchTerm);
+    const response = await fetch('/user/search?term=' + searchTerm);
     console.log(response)
     const data = await response.json();
     render();
 
     function render() {
         if (data.results.length === 0) {
-            ulElement.innerHTML = '<li> No Results</li>'
+            ulElement.innerHTML = '<p> No Results<p>'
         } else {
             const list = data.results.map(driver => (
-                `<li style ="text-transform: capitalize;">
+                `<div>
+                <div style ="text-transform: capitalize;">
                 <a href="/drivers/${driver._id}">
                 ${driver.name}
                 </a>
-                </li>`
+                </div>
+               <div><img src="/images/${driver.img}" alt="driver image" width="300" height="300"></div>
+               </div>`
             )).join('');
-            ulElement.innerHTML = list;
+            sectionElement.innerHTML = list;
 
         }
         inputElement.value = "";
@@ -35,5 +38,5 @@ async function handleClick() {
 
 
 function handleReset() {
-    ulElement.innerHTML = "";
+    sectionElement.innerHTML = "";
 }

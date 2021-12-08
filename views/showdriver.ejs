@@ -30,9 +30,10 @@
         <div class="eachentry">
             Availability(Days): <%=driver.days_available%>
         </div>
+        <div class="buttons">
         <form action="/drivers/<%=driver._id%>?_method=DELETE" method="POST">
             <input class="delBtn" type="submit" value="Delete Your Profile" />
         </form>
-        
+    </div>
 </body>
 </html>
