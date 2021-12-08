@@ -126,12 +126,14 @@ usersRouter.get('/search', (req, res) => {
 
 usersRouter.post('/:id/select', async (req, res) => {
     const parent = await Parent.findById(req.session.user);
-    console.log(req.body)
     parent.selected_drivers.push({
         id: req.params.id,
         day: req.body.days_available
     });
     await parent.save();
+    const driver = await Driver.findById(req.params.id);
+    driver.days_available = driver.days_available.filter( word => word !== req.body.days_available);
+    await driver.save();
     res.redirect('/drivers/');
 });
 
