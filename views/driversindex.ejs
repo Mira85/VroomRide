@@ -3,17 +3,26 @@
 <%- include('./partials/head')%>
 <body>
     <%- include('./partials/nav') %>
-    <table>
+    <div class="homeBox">
+        <h3 class="title is-3 indexHdr">Driver's index</h3>
+    <section class="profileBox">
         <% for (let i = 0; i < drivers.length; i++) { %>
-        <tr>
-            <td><a href="/drivers/<%=drivers[i]._id%>"><%=drivers[i].name%></td>
-        </tr>
-
+                <div class="items">
+                <div class="itemHeader"><%=drivers[i].name%></div>
+                <figure class="image is-96x96 itemImg">
+                    <a href="/drivers/<%=drivers[i].id%>">
+                        <img src="/images/<%=drivers[i].img%>" alt="driver image">
+                        </a>
+                    </figure>
+                </div>
+               
         <% } %>
-    </table>
+    </section>
     <a href="/drivers/edit">
-        <button class="editBtn" type="button">Edit your profile</button>
+        <button class="button editBtn" type="button">Edit your profile</button>
     </a>
+</div>
+    
          <%- include('./partials/footer.ejs')%>
 </body>
 </html>
