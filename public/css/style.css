@@ -90,7 +90,7 @@ nav {
     height:40rem;
     justify-content: center;
     align-items: center;
-    margin-top:1rem;
+    margin-top:0.8rem;
     gap: 0.8rem;
 }
 .items{
@@ -105,7 +105,6 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 .itemHeader{
     display: flex;
@@ -119,12 +118,17 @@ nav {
     display: flex;
 }
 .indexHdr {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     font-family:Helvetica, sans-serif;
   
 }
 
-.editBtn{
+.profileBtns{
+    display:flex;
+    gap: 1rem;
+}
+.drBtn {
     margin-top: 1.1rem;
-
+    display:flex;
+    
 }

@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head')%>
+
 <body>
     <%- include('./partials/nav') %>
     <div class="homeBox">
         <h3 class="title is-3 indexHdr">Driver's index</h3>
-    <section class="profileBox">
-        <% for (let i = 0; i < drivers.length; i++) { %>
-                <div class="items">
+        <section class="profileBox">
+            <% for (let i = 0; i < drivers.length; i++) { %>
+            <div class="items">
                 <div class="itemHeader"><%=drivers[i].name%></div>
                 <figure class="image is-96x96 itemImg">
                     <a href="/drivers/<%=drivers[i].id%>">
                         <img src="/images/<%=drivers[i].img%>" alt="driver image">
-                        </a>
-                    </figure>
-                </div>
-               
-        <% } %>
-    </section>
-    <a href="/drivers/edit">
-        <button class="button editBtn" type="button">Edit your profile</button>
-    </a>
-</div>
-    
-         <%- include('./partials/footer.ejs')%>
+                    </a>
+                </figure>
+            </div>
+
+            <% } %>
+        </section>
+        <div class="profileBtns">
+            <form action="/drivers/edit" method="GET">
+                <input class="button drBtn" type="submit" value="Edit Your Profile" />
+            </form>
+            <form action="/drivers/delete?_method=DELETE" method="POST">
+                <input class="button drBtn" type="submit" value="Delete Your Profile" />
+            </form>
+        <div>
+     </div>
+
+ <%- include('./partials/footer.ejs')%>
 </body>
+
 </html>

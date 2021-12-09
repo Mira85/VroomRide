@@ -63,7 +63,7 @@ driversRouter.get('/', (req, res) => {
 })
 
 //Delete Route
-driversRouter.delete('/:id', (req, res) => {
+driversRouter.delete('/delete', (req, res) => {
     Driver.findByIdAndRemove(req.session.user, (error, driver)=> {
         res.redirect('/drivers/');
     }
