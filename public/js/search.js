@@ -1,6 +1,6 @@
-const buttonElement = document.querySelector('button');
-const inputElement = document.querySelector('input');
-const sectionElement = document.querySelector('section');
+const buttonElement = document.querySelector('#searchBtn');
+const inputElement = document.querySelector('#searchTxt');
+const sectionElement = document.querySelector('#searchSectn');
 
 buttonElement.addEventListener('click', handleClick);
 inputElement.addEventListener('focus', handleReset);
