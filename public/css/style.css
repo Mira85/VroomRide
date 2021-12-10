@@ -129,6 +129,31 @@ nav {
 }
 .drBtn {
     margin-top: 1.1rem;
-    display:flex;
-    
+    display:flex;  
+}
+
+.showBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+  
+   /* */
+}
+.showContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showName {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.selectBox {
+    display: flex;
+    width: 15rem;
+    gap: 2rem;
+    margin: 1rem;
 }

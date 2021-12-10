@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head')%>
+<%- include('./partials/head')%>
+
 <body>
     <%- include('./partials/nav') %>
-    <div class="showname">
-        <h2 style="text-transform: capitalize;"><%=driver.name%></h2>
+    <div class="showContainer">
+        <div class="box showBox">
+            <div>
+                <h2 class="title is-4 showName" style="text-transform: capitalize;"><%=driver.name%></h2>
+            </div>
+            <div id="showImg"><img src="/images/<%=driver.img%>" alt="driver image" width="300" height="300"> </div>
+            <div class="showDescriptn">
+                <div class="eachentry">
+                    <b>Email:</b> <%=driver.email%>
+                </div>
+                <div class="eachentry">
+                    <b>Age:</b> <%=driver.age%>
+                </div>
+                <div class="eachentry">
+                    <b>Years of Experience:</b> <%=driver.years_experience%>
+                </div>
+                <div class="eachentry">
+                    <b>Certified:</b> <%=driver.certified%>
+                </div>
+                <div class="eachentry">
+                    <b>Availability(Days):</b> <%=driver.days_available%>
+                </div>
+                </div>
+               
+                    <form class="selectBox" action="/user/<%=driver._id%>/select" method="POST">
+                        <div class="select is-small">
+                        <select name="days_available">
+                            <% for (day of driver.days_available) {%>
+                            <option value="<%=day%>"><%=day%></option>
+                            <%}%>
+                        </select>
+                    </div>
+                         <input class="button is-small selectBtn" type="submit" value="SELECT"/>
+                     </form>
+                    
+                    
+             </div>
     </div>
-    <div id="showImg"><img src="/images/<%=driver.img%>" alt="driver image" width="300" height="300"> </div>
-    </div>
-    <div class="eachentry">
-        Email: <%=driver.email%>
-    </div>
-    <div class="eachentry">
-        Age: <%=driver.age%>
-    </div>
-    <div class="eachentry">
-        Years of Experience: <%=driver.years_experience%>
-    </div>
-    <div class="eachentry">
-        Certified: <%=driver.certified%>
-    </div>
-    <div class="eachentry">
-        Availability(Days): <%=driver.days_available%>
-    </div>
-    <form action="/user/<%=driver._id%>/select" method="POST">
-        <select name="days_available">
-            <% for (day of driver.days_available) {%>
-            <option value="<%=day%>"><%=day%></option>
-            <%}%>
-            </select>
-            <input class="selectBtn" type="submit" value="SELECT"/>
-        </form>
-
 
     <%- include('./partials/footer.ejs')%>
 </body>
