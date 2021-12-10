@@ -18,13 +18,19 @@ async function handleClick() {
             ulElement.innerHTML = '<p> No Results<p>'
         } else {
             const list = data.results.map(driver => (
-                `<div>
+                `
+                <div class="items">
                 <div style ="text-transform: capitalize;">
-                <a href="/drivers/${driver._id}">
-                ${driver.name}
-                </a>
+                <b>${driver.name}</b>
                 </div>
-               <div><img src="/images/${driver.img}" alt="driver image" width="300" height="300"></div>
+               <figure class="image is-96x96 itemImg">
+               <a href="/drivers/${driver._id}">
+               <img src="/images/${driver.img}" alt="driver image" width="300" height="300">
+               </a>
+               </figure>
+               <div>
+    
+               </div>
                </div>`
             )).join('');
             sectionElement.innerHTML = list;

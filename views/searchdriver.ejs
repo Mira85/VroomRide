@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head')%>
+<%- include('./partials/head')%>
+
 <body>
     <%- include('./partials/nav') %>
-    <h1>Search  For A Driver</h1>
-    <input id="searchTxt" type="text">
-    <button id="searchBtn">Search</button>
-    <section id="searchSectn">
+   <div class="searchContainer">
+    <div class="box showBox">
+        <div class="searchHdr"><b>Search For A Driver</b></div>
+        <div class="searchArea">
+            <input class="input" id="searchTxt" type="text">
+            <button class="button" id="searchBtn">Search</button>
+        </div>
+    </div>
+    <section class="profileBox" id="searchSectn">
 
     </section>
+</div>
     <%- include('./partials/footer.ejs')%>
 </body>
+
 </html>
