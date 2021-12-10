@@ -73,6 +73,13 @@ nav {
     color: white;
 }
 
+.signupSel{
+    margin-right: 0.8rem;
+}
+.signupEmail{
+    margin-top: 1.3rem;
+}
+
 .login{
     font-weight: bold;
     text-align: center;
@@ -83,6 +90,7 @@ nav {
     width:20rem;
    /* height:38rem;*/
 }
+
 .profileBox {
     display:flex;
     flex-wrap: wrap;
@@ -157,3 +165,4 @@ nav {
     gap: 2rem;
     margin: 1rem;
 }
+

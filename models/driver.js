@@ -10,7 +10,7 @@ const driverSchema = new Schema ({
     img: String,
     age: Number,
     years_experience: Number,
-    certified: Boolean,
+    certified: {type: Boolean, default:false},
     days_available: {type:[String], required: true, lowercase:true},
 
 }, {timestamps: true});

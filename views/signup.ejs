@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head')%>
+
 <body>
-    <h1>Signup</h1>
-    <form action="/user/signup" method="POST">
-        <label>Choose option</label>
-        <select data-style="btn-info" name="selection">
-            <option value="driver">Driver</option>
-            <option value="parent">Parent</option>
-        </select>
-        <label>
-            Email:
-            <input type="email" name="email">
-        </label>
-        <label>
-            Password:
-            <input type="password" name="password">
-        </label>
-        <input type="submit" value="Signup">
-    </form>
+    <h1 class="title is-1 has-text-white">VroomRide</h1>
+    <section class="section loginSec">
+        <div class="container loginCon">
+
+            <div class="login">
+                <h3 class="title is-4">Signup</h3>
+            </div>
+
+            <form class="box" action="/user/signup" method="POST">
+                <label class="signupSel"><b>Choose option</b></label>
+                <div class="select is-small">
+                    <select data-style="btn-info" name="selection">
+                        <option value="driver">Driver</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                </div>
+                <div class="field signupEmail">
+                    <label class="label"> Name:</label>
+                    <div class="control">
+                        <input class="input" type="text" name="name">
+                    </div>
+                </div>
+                <div class="field signupEmail">
+                    <label class="label"> Email:</label>
+                    <div class="control">
+                        <input class="input" type="email" name="email">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password:</label>
+                    <div class="control">
+                        <input class="input" type="password" name="password">
+                    </div>
+                </div>
+                <input class="input button is-primary" type="submit" value="Signup">
+            </form>
+        </div>
+    </section>
+    <%- include('./partials/footer.ejs')%>
 </body>
 
 </html>

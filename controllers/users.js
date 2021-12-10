@@ -19,6 +19,7 @@ usersRouter.get('/signup', (req, res) => {
 usersRouter.post('/signup', (req, res) => {
     const hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(SALT_ROUNDS));
     const user = {
+        name: req.body.name,
         email: req.body.email,
         password: hash
     }
@@ -54,7 +55,7 @@ usersRouter.post('/login', (req, res) => {
         if (driver) {
             if (bcrypt.compareSync(req.body.password, driver.password)) {
                 req.session.user = driver._id;
-                res.redirect('/drivers/edit');
+                res.redirect('/drivers/');
             } else {
                 return res.render('login.ejs', {
                     err: 'invalid creds'
