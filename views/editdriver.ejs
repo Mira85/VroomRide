@@ -25,7 +25,7 @@
 
             <div class="field">
                 <label class="label">Email</label>
-                <input class="input" type="text" name="email" value="<%=driver.email%>">
+                <input class="input" type="text" name="email" value="<%=driver.email%>"> 
             </div>
             <div class="field">
                 <label class="label">Age</label>
@@ -38,8 +38,16 @@
             <div class="field">
                 <label class="label">Certified</label>
                 <select class="select" data-style="btn-info" name="certified" value="<%=driver.certified%>">
+                    <% if (driver.certified === true) { %>
+                        <option value="true" selected>True</option>
+                        <option value="false">False</option>
+                   <% } else { %>
                     <option value="true">True</option>
-                    <option value="false">False</option>
+                    <option value="false" selected>False</option>
+    
+                   <% }%>
+                    
+                    
                 </select>
             </div>
             <div class="field">
