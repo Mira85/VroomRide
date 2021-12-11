@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const session = require('express-session')
 const driversController = require('./controllers/drivers');
 const usersController = require('./controllers/users');
+const parentsController = require('./controllers/parents');
 
 //Initialize app
 const app =express();
@@ -44,6 +45,7 @@ app.use(morgan('dev'));
 //Route
 app.use('/drivers/', driversController);
 app.use('/user/', usersController);
+app.use('/parent/', parentsController);
 app.get('/', (req, res) => {
     res.render('home.ejs')
 });

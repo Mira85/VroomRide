@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+
+<body>
+    <%- include('./partials/nav') %>
+    <div class="showContainer">
+        <div class="box showBox">
+            <div>
+                <h2 class="title is-4 showName" style="text-transform: capitalize;"><%=parent.name%></h2>
+            </div>
+            <div class="showDescriptn">
+                <div class="eachentry">
+                    <b>Email:</b> <%=parent.email%>
+                </div>
+            </div>
+            <div class="showDescriptn">
+                <div class="eachentry">
+
+                    <% const days ={monday:'', tuesday:'', wednesday:'', thursday:'', friday:'', saturday:'', sunday:''};%>
+                    <% for (let driver of parent.selected_drivers){%>
+                    <%console.log(driver)%>
+                    <% days[driver.day] = driver.name;%>
+
+
+                    <%}%>
+                        
+                        <b>Selected_drivers:</b> 
+                        <div>Monday<br>
+                            <%=days.monday%>
+                </div>
+
+                <div>Tuesday<br>
+                    <%=days.tuesday%>
+                </div>
+                <div>Wednesday<br>
+                    <%=days.wednesday%>
+                </div>
+                <div>Thursday<br>
+                    <%=days.thursday%>
+                </div>
+                <div>Friday<br>
+                    <%=days.friday%>
+                </div>
+                <div>Saturday<br>
+                    <%=days.saturday%>
+                </div>
+                <div>Sunday<br>
+                    <%=days.sunday%>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <%- include('./partials/footer.ejs')%>
+</body>
+
+</html>

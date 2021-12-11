@@ -70,7 +70,7 @@ usersRouter.post('/login', (req, res) => {
                 if (parent) {
                     if (bcrypt.compareSync(req.body.password, parent.password)) {
                         req.session.user = parent._id;
-                        res.redirect('/user/search')
+                        res.redirect('/parent/')
                     } else {
                         return res.render('login.ejs', {
                             err: 'invalid creds'
@@ -127,12 +127,13 @@ usersRouter.get('/search', (req, res) => {
 
 usersRouter.post('/:id/select', async (req, res) => {
     const parent = await Parent.findById(req.session.user);
+    const driver = await Driver.findById(req.params.id);
     parent.selected_drivers.push({
         id: req.params.id,
+        name: driver.name,
         day: req.body.days_available
     });
     await parent.save();
-    const driver = await Driver.findById(req.params.id);
     driver.days_available = driver.days_available.filter( word => word !== req.body.days_available);
     await driver.save();
     res.redirect('/drivers/');

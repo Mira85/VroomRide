@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 //Selected drivers schema
 const selectedDriversSchema = new Schema({
     id: String,
+    name: String,
     day:String,
 }, {timestamps: true});
 

@@ -6,7 +6,7 @@ const Driver = require('../models/driver');
 //Route object
 const driversRouter = express.Router();
 
-driversRouter.get('/search', async (req, res) => {
+/*driversRouter.get('/search', async (req, res) => {
     const term = req.query.term;
     if (term) {
         console.log(term)
@@ -16,7 +16,7 @@ driversRouter.get('/search', async (req, res) => {
         res.render('searchdriver.ejs');
     }
     
-});
+});*/
 
 //Router actions
 // seed route
@@ -65,7 +65,7 @@ driversRouter.get('/', (req, res) => {
 //Delete Route
 driversRouter.delete('/delete', (req, res) => {
     Driver.findByIdAndRemove(req.session.user, (error, driver)=> {
-        res.redirect('/drivers/');
+        res.redirect('/');
     }
     )
 })
