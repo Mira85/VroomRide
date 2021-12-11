@@ -42,16 +42,11 @@ nav {
 }
 
 .container{
-    /*border: solid green;*/
     width: 31rem;
     background-color:#f2eeeb ;
     box-shadow: transparent;
-  
 }
 
-.section{
-    border: solid purple;
-}
 .case {
     height: 40rem;
     background-color: white;
@@ -88,7 +83,6 @@ nav {
 }
 .loginCon{
     width:20rem;
-   /* height:38rem;*/
 }
 
 .profileBox {
@@ -146,7 +140,6 @@ nav {
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
-
 }
 .showContainer {
     display: flex;
@@ -177,15 +170,47 @@ nav {
 #searchBtn {
     display:flex;
 }
-/*#searchSectn{
-    display: flex;
-    border: solid red;
-    width:50rem;
-    height:40rem;
-}*/
+
 .searchContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.showPrtBox {
+    margin-top: 5rem;
+    display:flex;
+    flex-direction: column;
+}
+.selectedDrivers{
+    display:flex;
+    width: 70rem;
+    gap: 2rem;
+    margin-top: 2rem;
+    
+}
+.dayBox{
+    display: flex;
+    height: 10rem;
+    width: 20rem;
+    flex-direction: column;
+    align-items: center;
+}
+.day{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.selDriver{
+    font-weight:normal;
+    text-transform: capitalize;
+    margin-top: 0.3rem;
+}
+.hdrParent {
+    display:flex;
+    font-weight: bold;
+    margin-top: 2rem;
+    justify-content: center;
+}
+.selectDescptn{
+    margin-top: 2rem;
 }

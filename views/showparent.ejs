@@ -5,56 +5,48 @@
 <body>
     <%- include('./partials/nav') %>
     <div class="showContainer">
-        <div class="box showBox">
+        <div class="showPrtBox">
             <div>
-                <h2 class="title is-4 showName" style="text-transform: capitalize;"><%=parent.name%></h2>
+                <h2 class="title is-4 hdrParent" style="text-transform: capitalize;">Hello <%=parent.name%>!</h2>
             </div>
-            <div class="showDescriptn">
-                <div class="eachentry">
-                    <b>Email:</b> <%=parent.email%>
-                </div>
+            <div class="selectDescptn">
+                <b>You have selected the following drivers</b>
             </div>
-            <div class="showDescriptn">
-                <div class="eachentry">
-
-                    <% const days ={monday:'', tuesday:'', wednesday:'', thursday:'', friday:'', saturday:'', sunday:''};%>
-                    <% for (let driver of parent.selected_drivers){%>
-                    <%console.log(driver)%>
-                    <% days[driver.day] = driver.name;%>
-
-
-                    <%}%>
-                        
-                        <b>Selected_drivers:</b> 
-                        <div>Monday<br>
-                            <%=days.monday%>
+            <% const days ={monday:'', tuesday:'', wednesday:'', thursday:'', friday:'', saturday:'', sunday:''};%>
+            <% for (let driver of parent.selected_drivers){%>
+            <%console.log(driver)%>
+            <% days[driver.day] = driver.name;%>
+            <%}%>
+            <div class="selectedDrivers">
+                <div class="box dayBox">
+                    <div class="day">Monday</div>
+                        <div class="selDriver"><%=days.monday%></div>
+                 </div>
+                <div class="box dayBox">
+                    <div class="day">Tuesday</div>
+                        <div class="selDriver"><%=days.tuesday%></div>
                 </div>
-
-                <div>Tuesday<br>
-                    <%=days.tuesday%>
+                <div class="box dayBox">
+                    <div class="day">Wednesday</div>
+                        <div class="selDriver"><%=days.wednesday%></div>
                 </div>
-                <div>Wednesday<br>
-                    <%=days.wednesday%>
+                <div class="box dayBox">
+                    <div class="day">Thursday</div>
                 </div>
-                <div>Thursday<br>
-                    <%=days.thursday%>
+                <div class="box dayBox">
+                    <div class="day">Friday</div>
+                        <div class="selDriver"><%=days.friday%></div>
                 </div>
-                <div>Friday<br>
-                    <%=days.friday%>
+                <div class="box dayBox">
+                    <div class="day">Saturday</div>
+                        <div class="selDriver"><%=days.saturday%></div>
                 </div>
-                <div>Saturday<br>
-                    <%=days.saturday%>
+                <div class="box dayBox">
+                    <div class="day">Sunday</div>
+                        <div class="selDriver"><%=days.sunday%></div>
                 </div>
-                <div>Sunday<br>
-                    <%=days.sunday%>
-                </div>
-
-
-
-
-            </div>
-        </div>
-    </div>
+             </div>
+         </div>
     </div>
     <%- include('./partials/footer.ejs')%>
 </body>
