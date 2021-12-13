@@ -12,11 +12,14 @@ body{
 .navBar {
     background-color: #412b76;
     color: white;
+    height: 4rem;
 
 }
 .navLogo{
     color:white;
     font-family: 'MonteCarlo', cursive;
+    margin-top: 0.3rem;
+    margin-left: 0.4rem;
 
 }
 
@@ -56,6 +59,7 @@ nav {
     margin-top: 3rem;
     margin-bottom: 5rem;
     font-weight: bold;
+    margin-left: 0.5rem;
 }
 .homepageDiv2 {
     display: flex;
@@ -88,12 +92,13 @@ nav {
 .profileBox {
     display:flex;
     flex-wrap: wrap;
-    width:50rem;
+    max-width:50rem;
     height:40rem;
     justify-content: center;
     align-items: center;
-    margin-top:0.8rem;
+    margin-top:0.3rem;
     gap: 0.8rem;
+    overflow: scroll;
   
 }
 .items{
@@ -121,7 +126,7 @@ nav {
     display: flex;
 }
 .indexHdr {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     font-family:Helvetica, sans-serif;
   
 }
@@ -133,6 +138,10 @@ nav {
 .drBtn {
     margin-top: 1.1rem;
     display:flex;  
+}
+
+.editBtn {
+ margin-top: 0.5rem;
 }
 
 .showBox{
@@ -163,6 +172,7 @@ nav {
     display:flex;
     gap: 3rem;
 }
+
 #searchTxt{
     display:flex;
     width:17rem;
