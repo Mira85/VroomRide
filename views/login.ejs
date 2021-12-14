@@ -3,21 +3,17 @@
 <%- include('./partials/head')%>
 
 <body>
-
     <h1 class="title is-1 has-text-white">VroomRide</h1>
     <section class="section loginSec">
         <div class="container loginCon">
             <div class="login">
                 <h3 class="title is-4">Login</h3>
             </div>
-
             <div>
                 <% if (err) { %>
                 <p style="color: red; text-transform: capitalize;"><%=err%></p>
                 <% } %>
             </div>
-
-
             <form class="box" action="/user/login" method="POST">
                 <div class="field">
                     <label class="label"> Email</label>
@@ -33,7 +29,6 @@
                 </div>
                 <input class="input button is-primary" type="submit" value="Login">
             </form>
-        </div>
         </div>
     </section>
     <%- include('./partials/footer.ejs')%>

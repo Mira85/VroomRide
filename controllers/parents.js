@@ -6,6 +6,7 @@ const Driver = require('../models/driver');
 const parentsRouter = express.Router();
 
 //Routes
+
 //Home Route
 parentsRouter.get('/', (req, res) => {
     Parent.findById(req.session.user, (err, parent) => {
@@ -36,7 +37,6 @@ parentsRouter.get('/search', (req, res) => {
 });
 
 //Select Route
-
 parentsRouter.post('/:id/select', async (req, res) => {
     const parent = await Parent.findById(req.session.user);
     const driver = await Driver.findById(req.params.id);

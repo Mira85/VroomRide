@@ -1,26 +1,12 @@
 // Dependencies
 const express = require('express');
-const { connections } = require('mongoose');
-const driver = require('../models/driver');
 const Driver = require('../models/driver');
 //Route object
 const driversRouter = express.Router();
 
-/*driversRouter.get('/search', async (req, res) => {
-    const term = req.query.term;
-    if (term) {
-        console.log(term)
-        const results = await Driver.find({days_available: {$regex: term}});
-        res.json({ results });
-    } else {
-        res.render('searchdriver.ejs');
-    }
-    
-});*/
-
 //Router actions
-// seed route
 
+// seed route
 driversRouter.get('/seed', async (req, res) => {
     const data = [{
             name: "Henry",
@@ -52,9 +38,6 @@ driversRouter.get('/seed', async (req, res) => {
     res.redirect('/drivers');
 });
 
-
-
-
 //Index Route
 driversRouter.get('/', (req, res) => {
     Driver.find({}, (err, drivers) => {
@@ -78,7 +61,6 @@ driversRouter.put('/driversDashboard', (req, res) => {
         res.redirect('/drivers/');
     });
 });
-
 
 //Edit Route
 driversRouter.get('/edit', (req, res) => {

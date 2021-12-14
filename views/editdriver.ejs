@@ -5,56 +5,51 @@
 <body>
     <%- include('./partials/nav') %>
 
-    <div class="mainHeader">
-    </div>
+    <h3 class="title is-3 editHdr">Edit your profile</h3>
     <section class="section">
         <div class="container">
-            <div class="field">
-
-                <form class="editForm" action="/drivers/driversDashboard?_method=PUT%>" method="POST">
-                    <label class="label">Name</label>
-                    <input class="input" type="text" name="name" value="<%=driver.name%>">
-            </div>
-
-            <div class="field">
-                <label class="label">Img Link</label>
-                <div class="control">
-                    <input class="input" type="text" name="img" value="<%=driver.img%>">
+            <form class="editForm" action="/drivers/driversDashboard?_method=PUT%>" method="POST">
+                <div class="field">
+                        <label class="label">Name</label>
+                        <input class="input" type="text" name="name" value="<%=driver.name%>">
                 </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Email</label>
-                <input class="input" type="text" name="email" value="<%=driver.email%>"> 
-            </div>
-            <div class="field">
-                <label class="label">Age</label>
-                <input class="input" type="number" name="age" value="<%=driver.age%>">
-            </div>
-            <div class="field">
-                <label class="label">Years of Experience</label>
-                <input class="input" type="number" name="years_experience" value="<%=driver.years_experience%>">
-            </div>
-            <div class="field">
-                <label class="label">Certified</label>
-                <select class="select" data-style="btn-info" name="certified" value="<%=driver.certified%>">
-                    <% if (driver.certified === true) { %>
+                <div class="field">
+                    <label class="label">Img Link</label>
+                    <div class="control">
+                        <input class="input" type="text" name="img" value="<%=driver.img%>">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <input class="input" type="text" name="email" value="<%=driver.email%>">
+                </div>
+                <div class="field">
+                    <label class="label">Age</label>
+                    <input class="input" type="number" name="age" value="<%=driver.age%>">
+                </div>
+                <div class="field">
+                    <label class="label">Years of Experience</label>
+                    <input class="input" type="number" name="years_experience" value="<%=driver.years_experience%>">
+                </div>
+                <div class="field">
+                    <label class="label">Certified</label>
+                    <select class="select" data-style="btn-info" name="certified" value="<%=driver.certified%>">
+                        
+                        <% if (driver.certified === true) { %>
                         <option value="true" selected>True</option>
                         <option value="false">False</option>
-                   <% } else { %>
-                    <option value="true">True</option>
-                    <option value="false" selected>False</option>
-    
-                   <% }%>
-                    
-                    
-                </select>
-            </div>
-            <div class="field">
-                <label class="label">Availability(Days)</label>
-                <input class="input" type="text" name="days_available" value="<%=driver.days_available.join(', ')%>">
-            </div>
-            <input class="button editBtn" type="submit" value="Update Driver">
+                        <% } else { %>
+                        <option value="true">True</option>
+                        <option value="false" selected>False</option>
+                        <% }%>
+
+                    </select>
+                </div>
+                <div class="field">
+                    <label class="label">Availability(Days)</label>
+                    <input class="input" type="text" name="days_available" value="<%=driver.days_available.join(', ')%>">
+                </div>
+                <input class="button editBtn" type="submit" value="Update Driver">
             </form>
         </div>
     </section>

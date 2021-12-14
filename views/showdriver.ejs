@@ -26,25 +26,24 @@
                 <div class="eachentry">
                     <b>Availability(Days):</b> <%=driver.days_available.join(', ')%>
                 </div>
-                </div>
-                <% if(user_type === 'parent'){%>
-                    <form class="selectBox" action="/parent/<%=driver._id%>/select" method="POST">
-                        <div class="select is-small">
+            </div>
+
+            <% if(user_type === 'parent'){%>
+                <form class="selectBox" action="/parent/<%=driver._id%>/select" method="POST">
+                    <div class="select is-small">
                         <select name="days_available">
                             <% for (day of driver.days_available) {%>
                             <option value="<%=day%>"><%=day%></option>
                             <%}%>
                         </select>
                     </div>
-                         <input class="button is-small selectBtn" type="submit" value="SELECT"/>
-                     </form>
-                     <% } %>
-                    
-                    
-             </div>
-    </div>
+                    <input class="button is-small selectBtn" type="submit" value="SELECT"/>
+                </form>
+            <% } %>
 
-    <%- include('./partials/footer.ejs')%>
+         </div>
+     </div>
+     <%- include('./partials/footer.ejs')%>
 </body>
 
 </html>

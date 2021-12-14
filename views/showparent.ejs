@@ -12,23 +12,25 @@
             <div class="selectDescptn">
                 <b>You have selected following drivers</b>
             </div>
+
             <% const days ={monday:'', tuesday:'', wednesday:'', thursday:'', friday:'', saturday:'', sunday:''};%>
             <% for (let driver of parent.selected_drivers){%>
             <%console.log(driver)%>
             <% days[driver.day] = driver.name;%>
             <%}%>
+            
             <div class="selectedDrivers">
                 <div class="box dayBox">
                     <div class="day">Monday</div>
-                        <div class="selDriver"><%=days.monday%></div>
+                     <div class="selDriver"><%=days.monday%></div>
                  </div>
                 <div class="box dayBox">
                     <div class="day">Tuesday</div>
-                        <div class="selDriver"><%=days.tuesday%></div>
+                    <div class="selDriver"><%=days.tuesday%></div>
                 </div>
                 <div class="box dayBox">
                     <div class="day">Wednesday</div>
-                        <div class="selDriver"><%=days.wednesday%></div>
+                    <div class="selDriver"><%=days.wednesday%></div>
                 </div>
                 <div class="box dayBox">
                     <div class="day">Thursday</div>
@@ -36,15 +38,15 @@
                 </div>
                 <div class="box dayBox">
                     <div class="day">Friday</div>
-                        <div class="selDriver"><%=days.friday%></div>
+                    <div class="selDriver"><%=days.friday%></div>
                 </div>
                 <div class="box dayBox">
                     <div class="day">Saturday</div>
-                        <div class="selDriver"><%=days.saturday%></div>
+                    <div class="selDriver"><%=days.saturday%></div>
                 </div>
                 <div class="box dayBox">
                     <div class="day">Sunday</div>
-                        <div class="selDriver"><%=days.sunday%></div>
+                    <div class="selDriver"><%=days.sunday%></div>
                 </div>
              </div>
          </div>

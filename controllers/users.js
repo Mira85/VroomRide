@@ -94,30 +94,5 @@ usersRouter.get('/logout', (req, res) => {
     });
 });
 
-/*usersRouter.get('/driversDashboard', (req, res) => {
-    if (!req.session.user) return res.redirect('/user/login');
-   Driver.findById(req.session.user, (err, driver) => {
-        res.render('editdriver.ejs', {
-            driver
-        });
-    });
-   
-});*/
-
-
-
-
-
-/*driversRouter.get('/search', async (req, res) => {
-    const term = req.query.term;
-    if (term) {
-        const results = await Driver.find({days_available: {$regex: term}});
-        res.json({ results });
-    } else {
-        res.render('searchdriver.ejs');
-    }
-    
-});*/
-
 
 module.exports = usersRouter;

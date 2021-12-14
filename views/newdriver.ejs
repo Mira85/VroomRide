@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head')%>
+<%- include('./partials/head')%>
+
 <body>
     <%- include('./partials/nav') %>
     <div class="mainHeader">
@@ -26,9 +27,9 @@
         <div class="eachentry">
             <label class="newItems">Certified</label>
             <select data-style="btn-info" name="certified">
-            <option value="true">True</option>
-            <option value="false">False</option>
-        </select> 
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
         </div>
         <div class="eachentry">
             <label class="newItems">Availability(Days)</label>
@@ -38,4 +39,5 @@
     </form>
     <%- include('./partials/footer.ejs')%>
 </body>
+
 </html>

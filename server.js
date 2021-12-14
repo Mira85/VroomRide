@@ -36,7 +36,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
-
+//for user type 
 app.use(async function(req, res, next) {
     if(req.session && req.session.user_type) {
         res.locals.user_type = req.session.user_type;
@@ -56,7 +56,7 @@ app.use('/drivers/', driversController);
 app.use('/user/', usersController);
 app.use('/parent/', parentsController);
 app.get('/', (req, res) => {
-    res.render('home.ejs')
+    res.render('welcomepage.ejs')
 });
 
 //Listener
