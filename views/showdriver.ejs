@@ -27,7 +27,7 @@
                     <b>Availability(Days):</b> <%=driver.days_available.join(', ')%>
                 </div>
                 </div>
-               
+                <% if(user_type === 'parent'){%>
                     <form class="selectBox" action="/parent/<%=driver._id%>/select" method="POST">
                         <div class="select is-small">
                         <select name="days_available">
@@ -38,6 +38,7 @@
                     </div>
                          <input class="button is-small selectBtn" type="submit" value="SELECT"/>
                      </form>
+                     <% } %>
                     
                     
              </div>
