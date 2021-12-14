@@ -5,7 +5,11 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
+             <% if(user_type === 'parent'){%>
+                <a class="button is-primary" href="/parent">Home</a>
+             <%} else {%>
                 <a class="button is-primary" href="/drivers">Home</a>
+             <% } %>
                 <a class="button is-primary" href="/parent/search">Search</a>
                 <a class="button is-primary" href="/user/logout">Logout</a>
             </div>

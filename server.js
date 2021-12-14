@@ -37,6 +37,15 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+app.use(async function(req, res, next) {
+    if(req.session && req.session.user_type) {
+        res.locals.user_type = req.session.user_type;
+    }
+    res.locals.user = null;
+
+    next();
+});
+
 //method-override
 app.use(methodOverride('_method'));
 //https logger

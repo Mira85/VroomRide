@@ -58,7 +58,7 @@ driversRouter.get('/seed', async (req, res) => {
 //Index Route
 driversRouter.get('/', (req, res) => {
     Driver.find({}, (err, drivers) => {
-        res.render('driversindex.ejs', {drivers})
+        res.render('driversindex.ejs', {drivers});
     })
 })
 

@@ -55,6 +55,7 @@ usersRouter.post('/login', (req, res) => {
         if (driver) {
             if (bcrypt.compareSync(req.body.password, driver.password)) {
                 req.session.user = driver._id;
+                req.session.user_type = 'driver';
                 res.redirect('/drivers/');
             } else {
                 return res.render('login.ejs', {
@@ -70,6 +71,7 @@ usersRouter.post('/login', (req, res) => {
                 if (parent) {
                     if (bcrypt.compareSync(req.body.password, parent.password)) {
                         req.session.user = parent._id;
+                        req.session.user_type = 'parent';
                         res.redirect('/parent/')
                     } else {
                         return res.render('login.ejs', {
