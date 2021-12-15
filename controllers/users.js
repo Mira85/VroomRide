@@ -32,9 +32,7 @@ usersRouter.post('/signup', (req, res) => {
         Parent.create(user, (error, parent) => {
             req.session.user = parent._id;
             res.redirect('/')
-
         })
-
     };
 });
 
@@ -56,7 +54,7 @@ usersRouter.post('/login', (req, res) => {
             if (bcrypt.compareSync(req.body.password, driver.password)) {
                 req.session.user = driver._id;
                 req.session.user_type = 'driver';
-                res.redirect('/drivers/');
+                res.redirect('/driver/');
             } else {
                 return res.render('login.ejs', {
                     err: 'invalid creds'

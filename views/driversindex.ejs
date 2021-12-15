@@ -11,7 +11,7 @@
             <div class="items">
                 <div class="itemHeader"><%=drivers[i].name%></div>
                 <figure class="image is-96x96 itemImg">
-                    <a href="/drivers/<%=drivers[i].id%>">
+                    <a href="/driver/<%=drivers[i].id%>">
                         <img src="/images/<%=drivers[i].img%>" alt="driver image">
                     </a>
                 </figure>
@@ -20,10 +20,10 @@
             <% } %>
         </section>
         <div class="profileBtns">
-            <form action="/drivers/edit" method="GET">
+            <form action="/driver/edit" method="GET">
                 <input class="button drBtn" type="submit" value="Edit Your Profile" />
             </form>
-            <form action="/drivers/delete?_method=DELETE" method="POST">
+            <form action="/driver/delete?_method=DELETE" method="POST">
                 <input class="button drBtn" type="submit" value="Delete Your Profile" />
             </form>
         <div>

@@ -19,26 +19,23 @@ async function handleClick() {
             const list = data.results.map(driver => (
                 `
                 <div class="items">
-                <div style ="text-transform: capitalize;">
-                <b>${driver.name}</b>
-                </div>
-               <figure class="image is-96x96 itemImg">
-               <a href="/drivers/${driver._id}">
-               <img src="/images/${driver.img}" alt="driver image" width="300" height="300">
-               </a>
-               </figure>
+                    <div class="itemHeader" style ="text-transform: capitalize;">
+                      <b>${driver.name}</b>
+                    </div>
+                     <figure class="image is-96x96 itemImg">
+                        <a href="/driver/${driver._id}">
+                            <img src="/images/${driver.img}" alt="driver image">
+                        </a>
+                    </figure>
                <div>
     
                </div>
                </div>`
             )).join('');
             sectionElement.innerHTML = list;
-
         }
         inputElement.value = "";
-
     }
-
 }
 
 

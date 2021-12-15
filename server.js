@@ -52,7 +52,7 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
 //Route
-app.use('/drivers/', driversController);
+app.use('/driver/', driversController);
 app.use('/user/', usersController);
 app.use('/parent/', parentsController);
 app.get('/', (req, res) => {

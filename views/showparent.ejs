@@ -15,10 +15,9 @@
 
             <% const days ={monday:'', tuesday:'', wednesday:'', thursday:'', friday:'', saturday:'', sunday:''};%>
             <% for (let driver of parent.selected_drivers){%>
-            <%console.log(driver)%>
             <% days[driver.day] = driver.name;%>
             <%}%>
-            
+
             <div class="selectedDrivers">
                 <div class="box dayBox">
                     <div class="day">Monday</div>

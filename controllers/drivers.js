@@ -35,7 +35,7 @@ driversRouter.get('/seed', async (req, res) => {
     ];
     await Driver.deleteMany({});
     await Driver.create(data);
-    res.redirect('/drivers');
+    res.redirect('/driver');
 });
 
 //Index Route
@@ -58,7 +58,7 @@ driversRouter.put('/driversDashboard', (req, res) => {
     const split_days = req.body.days_available.split(', ');
         req.body.days_available = split_days;
     Driver.findByIdAndUpdate(req.session.user, req.body, {new:true}, (error, driver) => {
-        res.redirect('/drivers/');
+        res.redirect('/driver/');
     });
 });
 

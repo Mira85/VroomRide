@@ -189,7 +189,7 @@ nav {
     display:flex;
     flex-wrap: wrap;
     max-width: 55rem;
-    max-height: 30rem;
+    max-height: 40rem;
     justify-content: center;
     align-items: center;
     margin-top: 5rem;

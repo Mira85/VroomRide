@@ -2,7 +2,7 @@
 
 This CRUD web application is for drivers who would want a part-time job and for parents who can search for drivers to pick up/drop-off kids.
 
-There are times when it can be difficult for parents to pick up/drop-off kids at school or extracirricular activities. This app is useful for them as they can search for drivers based on the day they want a driver and select them.
+There are times when it can be difficult for parents to pick up/drop-off kids at school or extracirricular activities. This app is useful for them as they can search for drivers for the coming week based on the day they want a driver and select them.
 
 ## Technologies Used
 
