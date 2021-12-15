@@ -48,10 +48,11 @@ driversRouter.get('/', (req, res) => {
 //Delete Route
 driversRouter.delete('/delete', (req, res) => {
     Driver.findByIdAndRemove(req.session.user, (error, driver)=> {
-        res.redirect('/');
-    }
-    )
-})
+        req.session.destroy(() => {
+            res.redirect('/');
+        });
+    });
+});
 
 //Update Route
 driversRouter.put('/driversDashboard', (req, res) => {
@@ -66,15 +67,15 @@ driversRouter.put('/driversDashboard', (req, res) => {
 driversRouter.get('/edit', (req, res) => {
     Driver.findById(req.session.user, (err, driver) => {
         res.render('editdriver.ejs', {driver})
-    })
-})
+    });
+});
 
 //Show Route
 driversRouter.get('/:id/', (req, res) => {
     Driver.findById(req.params.id, (err, driver) => {
-        res.render('showdriver.ejs', {driver})
-    })
-})
+        res.render('showdriver.ejs', {driver});
+    });
+});
 
 
 //export route object
