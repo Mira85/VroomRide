@@ -17,8 +17,20 @@ There are times when it can be difficult for parents to pick up/drop-off kids at
 - Google Fonts
 
 ## Screenshots
+### Login page
+![Image of login page](./screen_shots/login_page.png)
 
-![Image of web page](./webpage.png)
+### driver home page
+![Image of login page](./screen_shots/driver_home_page.png)
+
+### driver show page
+![Image of login page](./screen_shots/driver_show_page.png)
+
+### parent home page
+![Image of login page](./screen_shots/parent_home_page.png)
+
+### search page
+![Image of login page](./screen_shots/search_page.png)
 
 ## Getting started
 
