@@ -56,7 +56,9 @@ app.use('/driver/', driversController);
 app.use('/user/', usersController);
 app.use('/parent/', parentsController);
 app.get('/', (req, res) => {
-    res.render('welcomepage.ejs')
+    res.render('login.ejs', {
+        err: ''
+    });
 });
 
 //Listener

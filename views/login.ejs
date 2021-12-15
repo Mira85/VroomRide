@@ -5,30 +5,50 @@
 <body>
     <h1 class="title is-1 has-text-white">VroomRide</h1>
     <section class="section loginSec">
-        <div class="container loginCon">
-            <div class="login">
-                <h3 class="title is-4">Login</h3>
-            </div>
-            <div>
-                <% if (err) { %>
-                <p style="color: red; text-transform: capitalize;"><%=err%></p>
-                <% } %>
-            </div>
-            <form class="box" action="/user/login" method="POST">
-                <div class="field">
-                    <label class="label"> Email</label>
-                    <div class="control">
-                        <input class="input" type="email" name="email">
-                    </div>
+        <div class="columns is-gapless">
+            <div class="column  welcomeInfo">
+                <img src="/images/car_img.png" width="200" height="200">
+                <img src="/images/family.png" width="200" height="200">
+                <div class="loginPgeText">
+                    <p>For drivers who are looking for a part-time job this is the place to be !</p><br>
+                    <p>For parents you can search for drivers. There are times when it can be difficult to pick
+                        up/drop-off kids
+                        at school or extracurricular activities. This app allows you to find a driver that is right for
+                        your
+                        family. </p><br>
+                    <p>Lets get you started!</p>
                 </div>
-                <div class="field">
-                    <label class="label">Password</label>
-                    <div class="control">
-                        <input class="input" type="password" name="password">
-                    </div>
+            </div>
+            <div class="column  loginCol">
+                <div class="container loginCon">
+                    <form class="box loginbox" action="/user/login" method="POST">
+                        <div class="login">
+                            <h3 class="title is-4">Login</h3>
+                        </div>
+                        <div>
+                            <% if (err) { %>
+                            <p style="color: red; text-transform: capitalize;"><%=err%></p>
+                            <% } %>
+                        </div>
+                        <div class="field">
+                            <label class="label"> Email</label>
+                            <div class="control">
+                                <input class="input" type="email" name="email">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input class="input" type="password" name="password">
+                            </div>
+                        </div>
+                        <input class="input button is-primary" type="submit" value="Login">
+                        <p id="signupTxt">New User?
+                            <a href="/user/signup">SignUp</a>
+                        </p>
+                    </form>
                 </div>
-                <input class="input button is-primary" type="submit" value="Login">
-            </form>
+            </div>
         </div>
     </section>
     <%- include('./partials/footer.ejs')%>

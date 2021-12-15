@@ -48,23 +48,19 @@ nav {
     box-shadow: transparent;
 }
 
-.case {
-    height: 40rem;
-    background-color: white;
-}
-
-.homepageDiv1{
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+.loginPgeText {
+    margin-top: 2rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin-left: 0.5rem;
 }
 
-.homepageDiv2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 50px;
+.loginCol{
+    margin-left: 2rem;
+}
+
+#signupTxt{
+    margin-top: 1rem;
+    font-weight: bold;
 }
 
 .button {

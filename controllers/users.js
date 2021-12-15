@@ -37,11 +37,11 @@ usersRouter.post('/signup', (req, res) => {
 });
 
 
-usersRouter.get('/login', (req, res) => {
+/*usersRouter.get('/login', (req, res) => {
     res.render('login.ejs', {
         err: ''
     });
-});
+});*/
 
 usersRouter.post('/login', (req, res) => {
     //find driver in database
