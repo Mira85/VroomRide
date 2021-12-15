@@ -27,4 +27,5 @@ There are times when it can be difficult for parents to pick up/drop-off kids at
 ## Future Enhancements
 
 - Parent can write a review for a driver so that other parents can choose a driver based on feedback.
-- Parent can search using name.
+- Add more filters to the search engine.
+- Add delete button on parents home page so they can remove selected drivers.

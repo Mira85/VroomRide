@@ -55,11 +55,11 @@ app.use(morgan('dev'));
 app.use('/driver/', driversController);
 app.use('/user/', usersController);
 app.use('/parent/', parentsController);
-app.get('/', (req, res) => {
-    res.render('login.ejs', {
-        err: ''
-    });
-});
+app.use('/', (req, res) => {
+    res.redirect('/user/login')
+}
+)
+
 
 //Listener
 app.listen(PORT, () => {

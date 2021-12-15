@@ -37,16 +37,14 @@ usersRouter.post('/signup', (req, res) => {
 });
 
 
-/*usersRouter.get('/login', (req, res) => {
+usersRouter.get('/login', (req, res) => {
     res.render('login.ejs', {
         err: ''
     });
-});*/
+});
 
 usersRouter.post('/login', (req, res) => {
     //find driver in database
-
-    //TODO: code needs to be refactored
     Driver.findOne({
         email: req.body.email
     }, (err, driver) => {
@@ -86,9 +84,15 @@ usersRouter.post('/login', (req, res) => {
     });
 });
 
+    
+  
+
+
+
+
 usersRouter.get('/logout', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/');
+        res.redirect('/user/login');
     });
 });
 
