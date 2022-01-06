@@ -84,12 +84,6 @@ usersRouter.post('/login', (req, res) => {
     });
 });
 
-    
-  
-
-
-
-
 usersRouter.get('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/user/login');

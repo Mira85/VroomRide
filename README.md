@@ -9,7 +9,7 @@ There are times when it can be difficult for parents to pick up/drop-off kids at
 - HTML5
 - CSS3
 - JavaScript
-- Moongoose
+- Mongoose
 - Node.js
 - Express
 - MongoDB
